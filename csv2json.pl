@@ -2,9 +2,10 @@
 
 use strict;
 use warnings;
+use utf8;
 
 use JSON::PP ();
-use Getopt::Long;
+use Getopt::Long qw(GetOptions);
 
 our $VERSION = 0.01;
 
