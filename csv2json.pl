@@ -1,5 +1,26 @@
 #!/usr/bin/perl
 
+# csv2json
+#
+# (c) 2016 Piotr Roszatycki <dexter@debian.org>, GPL
+
+=head1 SYNOPSIS
+
+B<cvs2json> -h|--help
+
+B<csv2json>
+[-s I<separator>|--separator=I<separator>]
+[-t|--tsv]
+[I<input-file>
+[I<output-file>]]
+
+=head1 README
+
+B<csv2json> converts CSV stream to JSON.
+
+=cut
+
+
 use strict;
 use warnings;
 use utf8;
@@ -89,3 +110,56 @@ while (<$fhin>) {
 }
 
 print $fhout "]\n" or die "Can't print: $!";
+
+
+__END__
+
+=head1 OPTIONS
+
+=over
+
+=item -s I<separator>|--separator=I<separator>
+
+Specify a field separator. Comma "C<,>"" is the default.
+
+=item -t|--tsv
+
+Specify TAB as a field separator.
+
+=item I<input-file>
+
+The input file name. C<STDIN> stream is the default.
+
+=item I<output-file>
+
+The output file name. C<STDOUT> stream is the default.
+
+=back
+
+=head1 PREREQUISITES
+
+=over 2
+
+=item *
+
+L<JSON>
+
+=back
+
+=head1 SCRIPT CATEGORIES
+
+Text_Processing/Filters
+
+=head1 AUTHORS
+
+Piotr Roszatycki <dexter@debian.org>
+
+=head1 LICENSE
+
+Copyright 2016 by Piotr Roszatycki <dexter@debian.org>.
+
+Inspired by https://www.npmjs.com/package/csv2json by Julien Fontanet.
+
+All rights reserved.  This program is free software; you can redistribute it
+and/or modify it under the terms of the GNU General Public License, the
+latest version.
