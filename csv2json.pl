@@ -23,7 +23,9 @@ B<csv2json> converts CSV stream to JSON.
 
 use strict;
 use warnings;
+
 use utf8;
+use open ':utf8', ':std';
 
 use JSON::PP ();
 use Getopt::Long qw(GetOptions);
