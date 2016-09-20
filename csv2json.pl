@@ -99,7 +99,7 @@ while (<$fhin>) {
         @h = @f;
         my $i = 0;
         my %order = map { $_ => $i++ } @h;
-        $json = JSON::PP->new->ascii->sort_by(sub { $order{$JSON::PP::a} <=> $order{$JSON::PP::b} });
+        $json = JSON::PP->new->sort_by(sub { $order{$JSON::PP::a} <=> $order{$JSON::PP::b} });
     } else {
         if ($l > 2) {
             print $fhout ",\n" or die "Can't print: $!";
